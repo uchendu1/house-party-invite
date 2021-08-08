@@ -9,7 +9,6 @@ interface IProps {
   }[];
 }
 
-const imgStyles = {weight:'70px', height: '70px'}
 
 const List: React.FC<IProps> = ({ guests }) => {
   const renderList = (): JSX.Element[] => {
@@ -17,7 +16,7 @@ const List: React.FC<IProps> = ({ guests }) => {
       return (
         <li key={i} className="List">
           <div className="List-header">
-            <img src={guest.url}  style={imgStyles} alt="img" />
+            <img src={guest.url}  className='List-img' alt="img" />
             <h4>{guest.name}</h4>
           </div>
 

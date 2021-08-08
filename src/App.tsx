@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
+import AddToList from './components/AddToList';
 import List from './components/List';
 
 
 
-interface IState {
-  invitee: {
+export interface IState {
+  guests: {
     name: string
     age:number
     url: string
@@ -15,7 +16,7 @@ interface IState {
 
 function App() {
 
-  const [people, setPeople] = useState<IState['invitee']>([
+  const [people, setPeople] = useState<IState['guests']>([
     
     {
     name: 'beyoncee ',
@@ -25,11 +26,13 @@ function App() {
     
 
   }
+  
 ])
   return (
     <div className="App">
       <h1>People Invited Into My Party</h1>
       <List  guests={people}/>
+      <AddToList  people={people} setPeople={setPeople}/>
     </div>
   );
 }
