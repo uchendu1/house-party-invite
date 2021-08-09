@@ -6,6 +6,7 @@ interface IProps {
   setPeople : React.Dispatch<React.SetStateAction<Props['guests']>>
 }
 
+// AddToList is a component that appends to the existing lists
 const AddToList: React.FC<IProps> = ({people, setPeople}) => {
   const [input, setInput] = useState({
     name: "",
@@ -59,7 +60,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
         name="name"
       />
       <input
-        type="text"
+        type="number"
         placeholder="Age"
         value={input.age}
         className="AddToList-input"
